@@ -1,0 +1,331 @@
+@import "reset.css";
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.canvas {
+    position: fixed;
+    transform: translate(-50%, -50%);
+    top: 60.8%;
+    left: 50%;
+    width: 700px ;
+    height: 500px ;
+    background-color: white;
+    border-radius: 25px;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.068);
+    border: 2px solid black;
+    user-select: none;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    width: 40%;
+    height: 60%;
+    background-color: #172627;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 30px;
+}
+
+.modal-title {
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+
+.modal-label {
+    font-size: 16px;
+    color: white;
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.modal-input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.modal-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+}
+
+.modal-button:hover {
+    opacity: 0.8;
+}
+
+.counter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.counter-button {
+    position: relative;
+    margin: 0 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 90px;
+}
+
+.button-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 70%;
+    height: 70%;
+    transform: translate(-50%, -50%);
+    object-fit: contain;
+}
+
+#player-count {
+    font-size: 40px;
+}
+
+.dropdown {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+}
+
+.dropbtn{
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    width: 30%;
+    height: 50%;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #3e8e41;
+}
+
+.dropdown-content {
+    position: absolute;
+    top: 75%;
+    display: none;
+    background-color: #172627;
+    height: auto;
+    max-height: 200px;
+    overflow: auto;
+    z-index: 1;
+}
+  
+.dropdown-content.show {
+    display: block;
+    text-align: center;
+    background-color: #4CAF50;
+    padding: 16px;
+    font-size: 16px;
+    width: 25.9%;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content p {
+    padding: 10%;
+}
+
+.dropdown-content p:hover {
+    background-color: #3e8e41;
+}
+
+#timer-count{
+    font-size: 40px;
+}
+
+#save-button{
+    width: 30%;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+.panel{
+    background-color: #20cd8d;
+    height: 300px;
+    width: 200px;
+    border-radius: 10px;
+    font-size: 18px;
+    position: fixed;
+    top: 53%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+#info-panel {
+    position: fixed;
+    left: 25%;
+    top: 45%;
+    transform: translateY(-50%);
+}
+
+#settingButton{
+    position: absolute;
+    left: 28%;
+    top: 75%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: inherit;
+    font-weight: bold;
+}
+
+#info-panel p {
+    margin-bottom: 20px;
+}
+
+.start-panel{
+    background-color: #20cd8d;
+    height: 100px;
+    width: 200px;
+    border-radius: 10px;
+    font-size: 18px;
+    position: fixed;
+    top: 80%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+#startButton{
+    position: absolute;
+    left: 28.5%;
+    top: 39.5%;
+    transform: translateY(-50%, -50%);
+    background: none;
+    border: none;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: inherit;
+    font-weight: bold;
+}
+
+.controls {
+    position: fixed;
+    left: 70%;
+    top: 41.2%;
+    margin-top:10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.controls .controls__btns {
+    margin-bottom: 30px;
+}
+
+.controls .controls__range{
+    margin-bottom: 30px;
+}
+
+.controls__range label{
+    position: relative;
+    color:white;
+    font-size: 20px;
+    padding: 10px;
+    background-color: #20cd8d;
+    border-radius: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+.controls__btns button{
+    all: unset;
+    cursor: pointer;
+    background-color: #20cd8d;
+    padding: 5px 0px;
+    width: 250px;
+    height:40px;
+    text-align: center;
+    border-radius: 10px;
+    color:white;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 17px;
+    margin-bottom:10px;
+}
+
+.jsColors{
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #20cd8d;
+    width: 300px;
+    height: 100px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.jsColors .coloris {
+    margin-top: 10px;
+}
+
+.statusBox{
+    position: absolute;
+    top: 45%;
+    left: 83.1%;
+    transform: translate(-50%, -50%);
+    background-color: #20cd8d;
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 20px;
+}

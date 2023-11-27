@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Liar Game</title>
+        <link rel="stylesheet" type="text/css" href="team.css" />
+        <link rel="stylesheet" type="text/css" href="liar.css">
+        <link rel="stylesheet" type="text/css" href="coloris.min.css">
+        <style type="text/css">
+            .circle .clr-field button {
+                width: 22px;
+                height: 22px;
+                left: 5px;
+                right: auto;
+                border-radius: 5px;
+                top: 20px;
+            }
+            .circle .clr-field input {
+                padding-left: 36px;
+            }
+            .circle .clr-field button {
+                border-radius: 50%;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <a href="index.html" id="header1">Liar Game</a>
+        </header>
+
+        <article id="part">
+            <div class="wordBox">
+                <h1><b>라이어게임</b></h1>
+            </div>
+
+            <canvas id="jsCanvas" class="canvas"></canvas>
+
+        </article>
+
+        <div class="panel">
+            <div id="info-panel">
+                <p>인원수: <span id="info-player-count"></span></p>
+                <p>주제: <span id="info-topic"></span></p>
+                <p>타이머: <span id="info-timer"></span></p>
+            </div>
+
+            <button type="button" id="settingButton">설정하기</button>
+        </div>
+
+        <div class="start-panel">
+            <button type="button" id="startButton">시작하기</button>
+        </div>
+
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <h2 class="modal-title">Liar Game Setting</h2>
+                
+                <div class="modal-label">인원수</div>
+                <div class="counter">
+                    <button id="decrease-player-button" class="modal-button counter-button">
+                        <img class="button-img" src="img/minus.png" alt="minus logo">
+                    </button>
+                    <span id="player-count">3명</span>
+                    <button id="increase-player-button" class="modal-button counter-button">
+                        <img class="button-img" src="img/plus.png" alt="plus logo">
+                    </button>
+                </div>
+                
+                <div class="modal-label">주제</div>
+                <div class="dropdown">
+                    <button id="dropbtn" class="dropbtn" onclick="toggleDropdown()">주제</button>
+                    <div id="dropdown-content" class="dropdown-content">
+                      <p onclick="selectOption(this)">나라</p>
+                      <p onclick="selectOption(this)">동물</p>
+                      <p onclick="selectOption(this)">스포츠</p>
+                      <p onclick="selectOption(this)">음식</p>
+                      <p onclick="selectOption(this)">직업</p>
+                      <p onclick="selectOption(this)">한국가수</p>
+                      <p onclick="selectOption(this)">한국영화</p>
+                    </div>
+                  </div>
+                  
+                
+                <div class="modal-label">타이머</div>
+                <div class="counter">
+                    <button id="decrease-timer-button" class="modal-button counter-button">
+                        <img class="button-img" src="img/minus.png" alt="minus logo">
+                    </button>
+                    <span id="timer-count">3분</span>
+                    <button id="increase-timer-button" class="modal-button counter-button">
+                        <img class="button-img" src="img/plus.png" alt="plus logo">
+                    </button>
+                </div>
+
+                <br>
+                <button id="save-button" class="modal-button">Save</button>
+            </div>
+        </div>
+
+        <div class="controls">
+            <div class="controls__range">
+            <label for="jsRange"><b>선 굵기 :</b> </label>
+            <input type="range" id="jsRange" min="1.0" max="10.0" value="2.5" step="0.1"/>
+            </div>
+            
+            <div class="controls__btns">
+                <button id="jsMode">Fill</button>
+                <button id="jsClear">Clear</button> 
+            </div>
+            
+            <div class="jsColors circle" id="jsColors">
+                <p>색상 선택</p>
+                <input type="text" class="coloris instance1" value="#000000">
+              </div>
+
+        </div>
+
+        <div class="status">
+            <div class="statusBox">
+                <h1><b>게임 진행 전입니다.</b></h1>
+            </div>
+        </div>
+
+        <script src="liar.js"></script>
+        <script type="text/javascript" src="coloris.min.js"></script>
+        <script type="text/javascript">
+
+        Coloris({
+      el: '.coloris',
+    });
+
+    /** Instances **/
+
+    Coloris.setInstance('.instance1', {
+      theme: 'polaroid',
+      themeMode: 'dark',
+      format: 'hex',
+      closeButton: true,
+      clearButton: true,
+      swatches: [
+        '#000000',
+        '#ffffff',
+        '#0000ff',
+        '#ff0000',
+        '#ffff00',
+        '#008000'
+      ]
+    });
+
+    </script>
+    </body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="team.css">
+    <link rel="stylesheet" type="text/css" href="coloris.min.css">
+    <title>Painting</title>
+</head>
+<body>
+    <header>
+        <a href="index.html"><h1 id="header1">Start Painting</h1></a>
+    </header>
+    
+    <div class="canvasContainer">
+        <canvas id="jsImageCanvas" class="canvas"></canvas>
+        <canvas id="jsCanvas" class="canvas"></canvas>
+    </div>
+
+    <div id="controlsContainer">
+        <label id="Label"><b>자신에게 맞는 레벨을 골라보세요!!</b></label> <br><br><br>
+        <div class="controls_level">
+           
+            <button class="levelBtn" data-level="1">Level 1-1</button>
+            <button class="levelBtn" data-level="2">Level 1-2</button>
+            <button class="levelBtn" data-level="3">Level 1-3</button><br>
+            </div>
+        <div class="controls__level">
+            <button class="levelBtn" data-level="4">Level 2-1</button>
+            <button class="levelBtn" data-level="5">Level 2-2</button>
+            <button class="levelBtn" data-level="6">Level 2-3</button><br>
+        </div>
+        <div class="controls___level">
+            <button class="levelBtn" data-level="7">Level 2-1</button>
+            <button class="levelBtn" data-level="8">Level 2-2</button>
+            <button class="levelBtn" data-level="9">Level 2-3</button><br>
+        </div>
+
+        <div class="controls">
+            <label id="fileLabel"><b>다른 그림을 원한다면??</b></label>
+            <input type="file" id="imageLoader" name="imageLoader" accept="image/*" /> <br><br>
+            <div class="controls__range">
+            <label for="jsRange"><b>선 굵기:</b> </label>
+            <input type="range" id="jsRange" min="1" max="20.0" value="10" step="0.5"/>
+            <label class="opacity-slider"><b>투명도 조절:</b> </label>
+            <input type="range" id="jsOpacityRange" class="opacity-slider" min="0.1" max="1" value="1" step="0.1"/>
+            </div>
+            
+        <div class="controls__btns">
+            <button id="jsMode">Fill</button>
+            <button id="myButton">투명도 조절</button> <br><br>
+            <button id="jsClear">Clear</button> 
+            <button id="resetButton">투명도 초기화</button> <br><br>
+            <button id="jsSave">Save</button>
+        </div>
+
+        <div class="jsColors circle" id="jsColors">
+            <p>색상 선택</p>
+            <input type="text" class="coloris instance1" value="#000000">
+          </div>
+        </div>
+        
+    </div>
+<script src="app.js"></script>
+<script src="pagemini.js"></script>
+<script type="text/javascript" src="coloris.min.js"></script>
+        <script type="text/javascript">
+
+        Coloris({
+      el: '.coloris',
+    });
+
+    /** Instances **/
+
+    Coloris.setInstance('.instance1', {
+      theme: 'polaroid',
+      themeMode: 'dark',
+      format: 'hex',
+      closeButton: true,
+      clearButton: true,
+      swatches: [
+        '#000000',
+        '#ffffff',
+        '#0000ff',
+        '#ff0000',
+        '#ffff00',
+        '#008000'
+      ]
+    });
+</script>
+</body>
+</html>

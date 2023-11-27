@@ -1,0 +1,191 @@
+html,
+body {
+  display: flex;
+  flex-flow: row wrap;
+  height: 100%;
+  margin: 0;
+  padding: 10px;
+  background: #172627;
+  color: white;
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+}
+
+header {
+  position: fixed;
+  top: 100px;
+  left: 205px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+#header::before {
+  content: "|";
+  margin-right: 20px;
+  font-weight: bold;
+  font-size: 70px;
+  color: #20cd8d;
+}
+
+#header1 {
+  position: fixed;
+  top: 50px;
+  left: 70px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+#header1::before {
+  content: "|";
+  margin-right: 15px;
+  font-weight: bold;
+  font-size: 40px;
+  color: #20cd8d;
+}
+
+.box {
+  background-color: #20cd8d;
+  height: 350px;
+  width: 180px;
+  padding: 50px;
+  border-radius: 40px;
+  font-size: 18px;
+  bottom: 70px;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.box .text-part {
+  font-weight: bold;
+  font-size: 30px;
+  position: absolute;
+  bottom: 40px;
+  left: 25px;
+}
+
+.box .text-part:first-child {
+  margin-bottom: 35px;
+}
+
+.box1 {
+  left: 11%;
+}
+
+.box2 {
+  left: 41%;
+}
+
+.box3 {
+  left: 71%;
+}
+
+.boxTeam{
+  background-color: #20cd8d;
+  height: 350px;
+  width: 180px;
+  padding: 50px;
+  border-radius: 40px;
+  font-size: 18px;
+  bottom: 70px;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.boxTeam .text-part {
+  font-weight: bold;
+  font-size: 30px;
+  position: absolute;
+  bottom: 40px;
+  left: 25px;
+}
+
+.boxIntro{
+  background-color: #20cd8d;
+  height: 700px;
+  width: 1600px;
+  border-radius: 40px;
+  font-size: 18px;
+  position: fixed;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.wordBox{
+  background-color: #20cd8d;
+  height: 50px;
+  width: 400px;
+  border-radius: 40px;
+  font-size: 18px;
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.text-part {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.hide {
+  opacity: 1;
+}
+
+.logo-container {
+  position: relative;
+}
+
+.logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: auto;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+  margin-top: -90%;
+  margin-left: 0;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+}
+
+.intro {
+  text-decoration: underline;
+  font-size: 30px;
+}
+
+.main {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
